@@ -1,24 +1,20 @@
 #include <stdio.h>
+void print_spaces(int r,int rows){
+     printf("%*c" , (rows - r) / 2 + 1, 0 );
+}
+void print_stars(int r){
+    printf("*", r);
+}
 
-int main() 
-{
-    int a=9; //stars
-    int b=1; //rows
-    int c=0; //space
-    
-    for (;b<=6; b++) {
-        for (;a>=1; a--) {
-        printf("*");
-        }
-        
+int main()
+{   
+    int row=5;
+    row=row*2-1;
+    for(int i = row; i >0; i-=2) {
+        print_spaces(i,row);
+        for(int j = 0; j < i; ++j)
+            print_stars(i);
         printf("\n");
-        a=9-(2*b);
-        
-        for (;c>=0; c--) {
-        printf(" ");
-        }
-        c=b;
     }
-    
     return 0;
 }
